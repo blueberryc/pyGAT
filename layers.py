@@ -48,6 +48,7 @@ class GraphAttentionLayer(nn.Module):
 
 class SpecialSpmmFunction(torch.autograd.Function):
     """Special function for only sparse region backpropataion layer."""
+    
     @staticmethod
     def forward(ctx, indices, values, shape, b):
         assert indices.requires_grad == False
